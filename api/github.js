@@ -19,12 +19,11 @@ router.get("/:username/:count/:sort", (req, res) => {
   const sort = req.params.sort;
   const clientId = keys.clientId.trim();
   const clientSecret = keys.clientSecret.trim();
-  const url = `https://api.github.com/users/${username}/repos?per_page=${count}&sort=${sort}&client_id=${
-    clientId
-  }&client_secret=${clientSecret}`;
+  const opts = { auth: { username: clientId, password: clientSecret } };
+  const url = `https://api.github.com/users/${username}/repos?per_page=${count}&sort=${sort}`;
 
   axios
-    .get(url)
+    .get(url, opts)
     .then(response => {
       res.json(response.data);
     })
