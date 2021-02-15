@@ -28,5 +28,5 @@ USER questcode-backend-scm:questcode-backend-scm
 
 WORKDIR /app
 COPY --chown=questcode-backend-scm:questcode-backend-scm --from=builder /app/src /app
-EXPOSE 3020
+EXPOSE 3030
 CMD ["npm", "start"]
