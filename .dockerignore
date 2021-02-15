@@ -1,1 +1,7 @@
 node_modules/
+config/keys-dev.js
+/infos.md
+/npm-debug.log
+/.gitignore
+/.dockerignore
+/Dockerfile
